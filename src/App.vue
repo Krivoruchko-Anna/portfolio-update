@@ -90,7 +90,7 @@ main {
   &:hover {
     g {
       path {
-        fill: #E9DBC9;
+        fill: var(--biege);
       }
     }
   }
@@ -115,7 +115,7 @@ main {
     &:hover {
       g {
         path {
-          fill: #7FBED1;
+          fill: var(--light-blue);
         }
       }
     }

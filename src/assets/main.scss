@@ -25,13 +25,11 @@ body {
   position: relative;
   display: flex;
   place-items: center;
-  color: #E9DBC9;
-  background-color: #674636;
 }
 
 a {
   text-decoration: none;
-  color: #E9DBC9;
+  color: var(--biege);
 }
 
 li {

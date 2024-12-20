@@ -34,12 +34,12 @@ defineProps<{
   border: 2px transparent solid;
 
   &:hover {
-    background-color: #85654e;
-    box-shadow: #AF8260 10px -10px 0px -2px, #F0A728 10px -10px, #D86937 20px -20px 0px -2px, #6C3428 20px -20px;
+    background-color: var(--accent-brown);
+    box-shadow: var(--light-brown) 10px -10px 0px -2px, var(--yellow) 10px -10px, var(--orange) 20px -20px 0px -2px, var(--dark-brown) 20px -20px;
   }
 
   &__role {
-    color: #FFF8E8;
+    color: var(--light-biege);
     font-size: 18px;
     font-weight: 600;
     line-height: 22px;
@@ -65,13 +65,13 @@ defineProps<{
   &__stack-item {
     padding: 5px 10px;
     border-radius: 20px;
-    color: #FFF8E8;
-    background-color: #577080;
+    color: var(--light-biege);
+    background-color: var(--dark-blue);
     font-weight: 500;
     transition: 0.3s all;
 
     &:hover {
-      background-color: #547183;
+      background-color: var(--dark-blue-1);
     }
   }
 

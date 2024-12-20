@@ -65,7 +65,7 @@ onMounted(() => {
 .backlight {
   position: fixed;
   border-radius: 50%;
-  background: radial-gradient(circle at center, rgba(155, 141, 134, 0.4), #674636);
+  background: radial-gradient(circle at center, rgba(155, 141, 134, 0.4), var(--main-brown));
   pointer-events: none;
   transition: width 0.2s, height 0.2s, opacity 0.2s;
   will-change: transform, opacity, width, height;

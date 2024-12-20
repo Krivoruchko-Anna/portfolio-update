@@ -112,8 +112,8 @@ const bounceEffect = () => {
     width: 190px;
     height: 190px;
     border-radius: 50%;
-    border: 1px solid #6C3428;
-    background: radial-gradient(circle at top left, #D86937, #F0A728);
+    border: 1px solid var(--dark-brown);
+    background: radial-gradient(circle at top left, var(--orange), var(--yellow));
     opacity: 0.6;
     animation: deform-circle 8s infinite ease-in-out;
     transition: 0.5s all;

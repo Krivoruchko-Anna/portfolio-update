@@ -28,8 +28,8 @@ defineProps<{
   border: 2px transparent solid;
 
   &:hover {
-    background-color: #85654e;
-    box-shadow: #AF8260 10px -10px 0px -2px, #F0A728 10px -10px, #D86937 20px -20px 0px -2px, #6C3428 20px -20px;
+    background-color: var(--accent-brown);
+    box-shadow: var(--light-brown) 10px -10px 0px -2px, var(--yellow) 10px -10px, var(--orange) 20px -20px 0px -2px, var(--dark-brown) 20px -20px;
   }
 
   &__image {
@@ -41,7 +41,7 @@ defineProps<{
   &__title {
     font-size: 16px;
     font-weight: 500;
-    color: #FFF8E8;
+    color: var(--light-biege);
   }
 }
 

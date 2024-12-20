@@ -308,15 +308,15 @@ onUnmounted(() => {
       }
 
       .line-1 {
-        background-color: #7FBED1;
+        background-color: var(--light-blue);
       }
 
       .line-2 {
-        background-color: #D86937;
+        background-color: var(--orange);
       }
 
       .line-3 {
-        background-color: #F0A728;
+        background-color: var(--yellow);
       }
     }
   }
@@ -324,13 +324,13 @@ onUnmounted(() => {
   &__name {
     font-size: 34px;
     font-weight: 700;
-    color: #FFF8E8;
+    color: var(--light-biege);
   }
 
   &__title {
     font-size: 22px;
     font-weight: 500;
-    color: #7fbed1;
+    color: var(--light-blue);
   }
 
   &__description {
@@ -354,7 +354,7 @@ onUnmounted(() => {
 
     &:hover {
       path {
-        fill: #F0A728;
+        fill: var(--yellow);
       }
     }
   }
@@ -379,7 +379,7 @@ onUnmounted(() => {
         display: block;
         width: 40px;
         height: 1px;
-        background-color: #E9DBC9;
+        background-color: var(--biege);
         transition: 0.3s all;
       }
     }
@@ -399,13 +399,13 @@ onUnmounted(() => {
 .active {
   a {
     font-weight: 600;
-    color: #7fbed1;
+    color: var(--light-blue);
     letter-spacing: 9px;
 
     &:before {
       width: 90px;
       height: 2px;
-      background-color: #7fbed1;
+      background-color: var(--light-blue);
     }
 
     &:hover {
@@ -432,7 +432,7 @@ onUnmounted(() => {
     &__icon {
       &:hover {
         path {
-          fill: #E9DBC9;
+          fill: var(--biege);
         }
       }
     }

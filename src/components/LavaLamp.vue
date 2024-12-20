@@ -37,8 +37,8 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 2px solid #6C3428;
-  background: radial-gradient(circle at top left, #ff5722, #ff9800);
+  border: 2px solid var(--dark-brown);
+  background: radial-gradient(circle at top left, var(--lava-orange), var(--lava-orange-1));
   opacity: 0;
   animation: floatUp 40s linear infinite, deform 6s infinite ease-in-out;
 }
@@ -49,8 +49,8 @@
   width: 94px;
   height: 94px;
   border-radius: 50%;
-  border: 1px solid #6C3428;
-  background: radial-gradient(circle at top left, #ff5722, #ff9800);
+  border: 1px solid var(--dark-brown);
+  background: radial-gradient(circle at top left, var(--lava-orange), var(--lava-orange-1));
   opacity: 0;
   animation: floatUp-m 18s linear infinite, deform 8s infinite ease-in-out;
 }
@@ -65,7 +65,7 @@
   animation-delay: 5s;
   width: 120px;
   height: 120px;
-  background: radial-gradient(circle at bottom right, #ff9800, #ffc107);
+  background: radial-gradient(circle at bottom right, var(--lava-orange-1), var(--yellow-lava));
 }
 
 .circle3 {
@@ -73,7 +73,7 @@
   animation-delay: 0s;
   width: 80px;
   height: 80px;
-  background: radial-gradient(circle at bottom right, #E9DBC9, #AF8260);
+  background: radial-gradient(circle at bottom right, var(--biege), var(--light-brown));
 }
 
 .circle4 {
@@ -81,7 +81,7 @@
   animation-delay: 11s;
   width: 90px;
   height: 90px;
-  background: radial-gradient(circle at center, #ff5722, #f44336);
+  background: radial-gradient(circle at center, var(--lava-orange), var(--red));
 }
 
 .circle5 {
@@ -89,7 +89,7 @@
   animation-delay: 10s;
   width: 94px;
   height: 94px;
-  background: radial-gradient(circle at bottom right, #c95110, #ffc107);
+  background: radial-gradient(circle at bottom right, var(--lava-orange-2), var(--yellow-lava));
 }
 
 .circle6 {
@@ -97,7 +97,7 @@
   animation-delay: 2s;
   width: 60px;
   height: 60px;
-  background: radial-gradient(circle at top left, #ff5722, #ff9800);
+  background: radial-gradient(circle at top left, var(--lava-orange), var(--lava-orange-1));
 }
 
 .circle7 {
@@ -105,7 +105,7 @@
   animation-delay: 3s;
   width: 90px;
   height: 90px;
-  background: radial-gradient(circle at top right, #ff5722, #f44336);
+  background: radial-gradient(circle at top right, var(--lava-orange), var(--red));
 }
 
 .circle8 {
@@ -113,7 +113,7 @@
   animation-delay: 1s;
   width: 94px;
   height: 94px;
-  background: radial-gradient(circle at bottom right, #AF8260, #E9DBC9);
+  background: radial-gradient(circle at bottom right, var(--light-brown), var(--biege));
 }
 
 @keyframes floatUp {
