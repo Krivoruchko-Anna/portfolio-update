@@ -102,7 +102,7 @@ onUnmounted(() => {
     </nav>
 
     <ul class="header__links">
-      <li v-for="link in socials" :key="link.icon" class="header__link">
+      <li v-for="(link, index) in socials" :key="index" class="header__link">
         <a :href="link.link" target="_blank">
           <component class="header__icon" :is="link.icon"></component>
         </a>

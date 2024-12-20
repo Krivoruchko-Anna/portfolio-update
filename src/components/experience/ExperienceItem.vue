@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ExperienceItemType } from '@/components/experience/experience.ts'
+import type { ExperienceItemType } from '@/components/experience/experience.ts'
 
 defineProps<{
   item: ExperienceItemType
