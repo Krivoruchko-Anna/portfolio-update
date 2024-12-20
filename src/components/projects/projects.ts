@@ -8,7 +8,8 @@ export type ProjectItemType = {
 export const Projects: ProjectItemType[] = [
   {
     title: 'Musio',
-    description: 'A platform designed for musicians and their students to facilitate online music lessons, connecting people from around the globe.',
+    description:
+      'A platform designed for musicians and their students to facilitate online music lessons, connecting people from around the globe.',
     image: 'musio',
     link: 'https://crm.musio.io/',
   },
@@ -32,19 +33,22 @@ export const Projects: ProjectItemType[] = [
   },
   {
     title: 'Impact factors',
-    description: 'A web builder platform that enables users to create websites quickly and effortlessly.',
+    description:
+      'A web builder platform that enables users to create websites quickly and effortlessly.',
     image: 'impact-factors',
     link: 'https://impactfactors.net/',
   },
   {
     title: 'VoxSmart',
-    description: 'A web application that consolidates communication data from various sources into a single platform for monitoring employees handling sensitive information.',
+    description:
+      'A web application that consolidates communication data from various sources into a single platform for monitoring employees handling sensitive information.',
     image: 'voxsmart',
     link: 'https://www.voxsmart.com/',
   },
   {
     title: 'Centiment',
-    description: 'A web platform offering a comprehensive market research solution, featuring survey tools, access to a global audience panel, and expert research services.',
+    description:
+      'A web platform offering a comprehensive market research solution, featuring survey tools, access to a global audience panel, and expert research services.',
     image: 'centiment',
     link: 'https://www.centiment.co/',
   },
@@ -53,7 +57,7 @@ export const Projects: ProjectItemType[] = [
 export const PetProjects: ProjectItemType[] = [
   {
     title: 'Woodoo',
-    description: 'An infrared sauna\'s main page.',
+    description: "An infrared sauna's main page.",
     image: 'woodoo',
     link: 'http://woodoo.3dw.by/',
   },
@@ -101,7 +105,8 @@ export const PetProjects: ProjectItemType[] = [
   },
   {
     title: 'MusX',
-    description: 'A music player that lets you add and listen to your songs from a personal account.',
+    description:
+      'A music player that lets you add and listen to your songs from a personal account.',
     image: 'musx',
     link: 'http://musx.3dw.by/',
   },

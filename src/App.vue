@@ -1,51 +1,47 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted } from 'vue'
 // import { useRouter } from "vue-router";
 
-import AppHeader from '@/components/AppHeader.vue'
+import AppHeader from '@/components/header/AppHeader.vue'
 import AppMain from '@/components/AppMain.vue'
-import LavaLamp from "@/components/LavaLamp.vue";
-import IconUp from "@/components/icons/IconUp.vue";
-import Backlight from "@/components/Backlight.vue";
-import Copyright from "@/components/Copyright.vue";
+import LavaLamp from '@/components/LavaLamp.vue'
+import IconUp from '@/components/icons/IconUp.vue'
+import Backlight from '@/components/Backlight.vue'
+import Copyright from '@/components/Copyright.vue'
 
 // const router = useRouter()
 
-const showArrow = ref(false);
+const showArrow = ref(false)
 
 const handleScroll = () => {
-  showArrow.value = window.scrollY > 300;
-};
+  showArrow.value = window.scrollY > 300
+}
 
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
-    behavior: "smooth",
-  });
-};
+    behavior: 'smooth',
+  })
+}
 
 // onBeforeMount(() => {
 //   router.push('')
 // })
 
 onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
-});
+  window.addEventListener('scroll', handleScroll)
+})
 
 onUnmounted(() => {
-  window.removeEventListener("scroll", handleScroll);
-});
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
   <Backlight />
   <LavaLamp />
 
-  <IconUp
-    class="up-arrow"
-    :class="{ 'show': showArrow }"
-    @click="scrollToTop"
-  />
+  <IconUp class="up-arrow" :class="{ show: showArrow }" @click="scrollToTop" />
 
   <header>
     <AppHeader />
@@ -59,7 +55,8 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss">
-header, main {
+header,
+main {
   z-index: 1;
 }
 
@@ -107,7 +104,8 @@ main {
 }
 
 @media (max-width: 1024px) {
-  header, main {
+  header,
+  main {
     width: 100%;
   }
 

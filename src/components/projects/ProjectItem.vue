@@ -18,19 +18,10 @@ defineProps<{
 </template>
 
 <style lang="scss" scoped>
-.project-item {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-  cursor: pointer;
-  transition: 0.3s all;
-  border-radius: 8px;
-  border: 2px transparent solid;
+@import '../../assets/mixins.scss';
 
-  &:hover {
-    background-color: var(--accent-brown);
-    box-shadow: var(--light-brown) 10px -10px 0px -2px, var(--yellow) 10px -10px, var(--orange) 20px -20px 0px -2px, var(--dark-brown) 20px -20px;
-  }
+.project-item {
+  @include card-item;
 
   &__image {
     width: 120px;

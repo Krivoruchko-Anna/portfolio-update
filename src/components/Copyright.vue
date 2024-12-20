@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue'
 
-const currentYear = ref<number>(new Date().getFullYear());
+const currentYear = ref<number>(new Date().getFullYear())
 </script>
 
 <template>
-  <div class="copyright">
-    © {{ currentYear }} Anna Krivoruchko. All Rights Reserved.
-  </div>
+  <div class="copyright">© {{ currentYear }} Anna Krivoruchko. All Rights Reserved.</div>
 </template>
 
 <style scoped lang="scss">

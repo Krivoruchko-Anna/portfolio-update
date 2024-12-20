@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { gsap } from "gsap";
+import { ref } from 'vue'
+import { gsap } from 'gsap'
 
-const photo = ref<HTMLImageElement | null>(null);
-const circle = ref<HTMLImageElement | null>(null);
+const photo = ref<HTMLImageElement | null>(null)
+const circle = ref<HTMLImageElement | null>(null)
 
 const getRandomSign = (): number => {
-  return Math.random() < 0.5 ? -100 : 100;
-};
+  return Math.random() < 0.5 ? -100 : 100
+}
 
 const bounceEffect = () => {
-  if (!photo.value) return;
+  if (!photo.value) return
 
-  const randomX = getRandomSign();
-  const randomY = getRandomSign();
+  const randomX = getRandomSign()
+  const randomY = getRandomSign()
 
   gsap.fromTo(
     photo.value,
@@ -24,13 +24,13 @@ const bounceEffect = () => {
       x: randomX,
       skewX: 25,
       skewY: 25,
-      filter: "blur(1px)",
+      filter: 'blur(1px)',
       duration: 0.1,
-      ease: "elastic.out",
+      ease: 'elastic.out',
       yoyo: true,
       repeat: 1,
-    }
-  );
+    },
+  )
 
   gsap.fromTo(
     circle.value,
@@ -39,12 +39,12 @@ const bounceEffect = () => {
       skewX: 15,
       skewY: 15,
       duration: 0.1,
-      ease: "elastic.out",
+      ease: 'elastic.out',
       yoyo: true,
       repeat: 1,
-    }
-  );
-};
+    },
+  )
+}
 </script>
 
 <template>
@@ -59,14 +59,24 @@ const bounceEffect = () => {
         alt="photo"
         ref="photo"
         @click="bounceEffect"
-      >
+      />
 
       <div class="about__info">
         <p>
-          I am a Frontend Developer with over three years of commercial experience, specializing in creating dynamic and user-friendly web applications using modern technologies like Vue.js, TypeScript, and Lit. Throughout my career, I have worked on diverse projects ranging from international trading platforms and online education tools to charity initiatives and cutting-edge monitoring solutions. My work focuses on delivering seamless user experiences by developing efficient features, optimizing performance, and maintaining high-quality code standards.
+          I am a Frontend Developer with over three years of commercial experience, specializing in
+          creating dynamic and user-friendly web applications using modern technologies like Vue.js,
+          TypeScript, and Lit. Throughout my career, I have worked on diverse projects ranging from
+          international trading platforms and online education tools to charity initiatives and
+          cutting-edge monitoring solutions. My work focuses on delivering seamless user experiences
+          by developing efficient features, optimizing performance, and maintaining high-quality
+          code standards.
         </p>
         <p>
-          Collaboration and continuous learning are at the heart of my approach. I thrive in Agile environments, actively participating in planning, code reviews, and technical discussions to ensure successful project outcomes. Outside of work, I enjoy expressing creativity through making silver jewelry, exploring new places while traveling, and immersing myself in music and books.
+          Collaboration and continuous learning are at the heart of my approach. I thrive in Agile
+          environments, actively participating in planning, code reviews, and technical discussions
+          to ensure successful project outcomes. Outside of work, I enjoy expressing creativity
+          through making silver jewelry, exploring new places while traveling, and immersing myself
+          in music and books.
         </p>
       </div>
     </div>

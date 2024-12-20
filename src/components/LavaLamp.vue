@@ -15,7 +15,6 @@
 </template>
 
 <style lang="scss" scoped>
-
 .lava-lamp {
   position: absolute;
   top: 0;
@@ -40,7 +39,9 @@
   border: 2px solid var(--dark-brown);
   background: radial-gradient(circle at top left, var(--lava-orange), var(--lava-orange-1));
   opacity: 0;
-  animation: floatUp 40s linear infinite, deform 6s infinite ease-in-out;
+  animation:
+    floatUp 40s linear infinite,
+    deform 6s infinite ease-in-out;
 }
 
 .circle-m {
@@ -52,7 +53,9 @@
   border: 1px solid var(--dark-brown);
   background: radial-gradient(circle at top left, var(--lava-orange), var(--lava-orange-1));
   opacity: 0;
-  animation: floatUp-m 18s linear infinite, deform 8s infinite ease-in-out;
+  animation:
+    floatUp-m 18s linear infinite,
+    deform 8s infinite ease-in-out;
 }
 
 .circle1 {
