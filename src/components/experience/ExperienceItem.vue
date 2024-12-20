@@ -24,7 +24,8 @@ defineProps<{
 </template>
 
 <style lang="scss" scoped>
-@import '../../assets/mixins.scss';
+@use '../../assets/mixins' as *;
+
 
 .experience-item {
   @include card-item;
