@@ -134,4 +134,10 @@ export const PetProjects: ProjectItemType[] = [
     image: 'portfolio',
     link: 'https://portfolio.3dw.by/',
   },
+  {
+    title: 'Leela',
+    description: 'Transformation game Leela.',
+    image: 'leela',
+    link: 'https://leela.3dw.by/',
+  },
 ]
