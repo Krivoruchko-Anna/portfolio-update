@@ -26,7 +26,6 @@ defineProps<{
 <style lang="scss" scoped>
 @use '../../assets/mixins' as *;
 
-
 .experience-item {
   @include card-item;
   gap: 30px;

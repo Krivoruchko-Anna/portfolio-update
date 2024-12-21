@@ -239,4 +239,10 @@ onUnmounted(() => {
     }
   }
 }
+
+@media (max-width: 378px) {
+  .header {
+    height: 320px;
+  }
+}
 </style>

@@ -15,5 +15,9 @@ import Projects from '@/components/projects/Projects.vue'
 <style scoped lang="scss">
 .main {
   padding-bottom: 60px;
+
+  @media (max-width: 616px) {
+    padding-bottom: 100px;
+  }
 }
 </style>

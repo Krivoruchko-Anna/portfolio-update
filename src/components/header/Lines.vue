@@ -131,6 +131,10 @@ const onLeave = (lineIndex: number) => {
     .mobile-line {
       width: 2px;
       height: 232px;
+
+      @media (max-width: 378px) {
+        height: 302px;
+      }
     }
 
     .line-1 {
