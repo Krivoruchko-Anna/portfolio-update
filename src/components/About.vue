@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { gsap } from 'gsap'
+import { throttle } from 'lodash'
 
 const photo = ref<HTMLImageElement | null>(null)
 const circle = ref<HTMLImageElement | null>(null)
@@ -9,7 +10,7 @@ const getRandomSign = (): number => {
   return Math.random() < 0.5 ? -100 : 100
 }
 
-const bounceEffect = () => {
+const bounceEffect = throttle(() => {
   if (!photo.value) return
 
   const randomX = getRandomSign()
@@ -19,12 +20,11 @@ const bounceEffect = () => {
     photo.value,
     { y: 0, x: 0 },
     {
-      scale: 0.9,
+      scale: 0.85,
       y: randomY,
       x: randomX,
-      skewX: 25,
-      skewY: 25,
-      filter: 'blur(1px)',
+      skewX: 28,
+      skewY: 28,
       duration: 0.1,
       ease: 'elastic.out',
       yoyo: true,
@@ -36,15 +36,18 @@ const bounceEffect = () => {
     circle.value,
     { y: 0, x: 0 },
     {
-      skewX: 15,
-      skewY: 15,
+      scale: 0.9,
+      y: 0,
+      x: 0,
+      skewX: 0,
+      skewY: 0,
       duration: 0.1,
       ease: 'elastic.out',
       yoyo: true,
       repeat: 1,
     },
   )
-}
+}, 900)
 </script>
 
 <template>

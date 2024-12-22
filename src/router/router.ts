@@ -4,24 +4,29 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('../components/About.vue'),
+    component: () =>
+      import(/* webpackChunkName: "about-chunk" */ '../components/About.vue'),
   },
   {
     path: '/about',
     name: 'About',
-    component: () => import('../components/About.vue'),
+    component: () =>
+      import(/* webpackChunkName: "about-chunk" */ '../components/About.vue'),
   },
   {
     path: '/experience',
     name: 'Experience',
-    component: () => import('../components/experience/Experience.vue'),
+    component: () =>
+      import(/* webpackChunkName: "experience-chunk" */ '../components/experience/Experience.vue'),
   },
   {
     path: '/projects',
     name: 'Projects',
-    component: () => import('../components/projects/Projects.vue'),
+    component: () =>
+      import(/* webpackChunkName: "projects-chunk" */ '../components/projects/Projects.vue'),
   },
-]
+];
+
 
 const router = createRouter({
   history: createWebHistory(),
