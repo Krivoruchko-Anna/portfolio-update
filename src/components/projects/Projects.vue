@@ -11,7 +11,7 @@ import { Projects, PetProjects } from '@/components/projects/projects.ts'
     </div>
   </div>
 
-  <div class="projects">
+  <div class="projects pet-projects">
     <h2 class="projects__title show">Just for fun</h2>
     <div class="projects__container">
       <ProjectItem
@@ -23,7 +23,7 @@ import { Projects, PetProjects } from '@/components/projects/projects.ts'
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .projects {
   margin-top: 100px;
   padding-top: 20px;
@@ -57,6 +57,29 @@ import { Projects, PetProjects } from '@/components/projects/projects.ts'
 
     &__title {
       display: block;
+    }
+  }
+}
+
+.pet-projects {
+  .projects__container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 28px;
+  }
+
+  .project-item {
+    padding: 12px;
+    width: 310px;
+  }
+
+  @media (max-width: 1480px) {
+    flex-direction: column;
+    gap: 20px;
+
+    .project-item {
+      padding: 20px;
+      width: 100%;
     }
   }
 }

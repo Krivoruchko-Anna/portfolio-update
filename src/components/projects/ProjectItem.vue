@@ -25,7 +25,7 @@ defineProps<{
 
   &__image {
     width: 120px;
-    height: 100%;
+    height: 85px;
     border-radius: 12px;
   }
 

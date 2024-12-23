@@ -4,14 +4,12 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () =>
-      import(/* webpackChunkName: "about-chunk" */ '../components/About.vue'),
+    component: () => import(/* webpackChunkName: "about-chunk" */ '../components/About.vue'),
   },
   {
     path: '/about',
     name: 'About',
-    component: () =>
-      import(/* webpackChunkName: "about-chunk" */ '../components/About.vue'),
+    component: () => import(/* webpackChunkName: "about-chunk" */ '../components/About.vue'),
   },
   {
     path: '/experience',
@@ -25,8 +23,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "projects-chunk" */ '../components/projects/Projects.vue'),
   },
-];
-
+]
 
 const router = createRouter({
   history: createWebHistory(),
