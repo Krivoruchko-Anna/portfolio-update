@@ -10,7 +10,7 @@ export const Experience: ExperienceItemType[] = [
   {
     date: 'Sep 2023 - Nov 2024',
     title: 'Frontend Developer (Vue.js) at Centiment',
-    description: 'Create a description for what I was doing in Centiment.',
+    description: 'My primary responsibility was rewriting the existing monolithic application into a modern architecture using Vue.js 3 with a separate frontend. I developed new components and pages aligned with the updated design, ensuring a seamless user experience. Additionally, I participated in design discussions, collaborated with team members to refine the UI, conducted code reviews to maintain high-quality standards, and supported the migration to a scalable and efficient platform architecture.',
     stack: ['Vue.js 2', 'Vue.js 3', 'TS', 'Storybook', 'UnoCss', 'Pinia', 'Axios'],
     link: 'https://www.centiment.co/',
   },
