@@ -64,7 +64,6 @@ const handleScroll = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
-  handleScroll()
 })
 
 onUnmounted(() => {
@@ -94,7 +93,7 @@ onUnmounted(() => {
           :key="link.id"
           @click="updateActiveSection(link.id)"
         >
-          <router-link @click="disableListener" :to="link.to">
+          <router-link @click.prevent="disableListener" :to="link.to">
             {{ link.title }}
           </router-link>
         </li>

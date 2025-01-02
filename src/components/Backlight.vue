@@ -4,42 +4,41 @@ import { gsap } from 'gsap'
 
 const backlight = ref<HTMLElement | null>(null)
 
-const initMouseEffect = () => {
-  const handleMouseMove = (e: MouseEvent) => {
-    const mouseX = e.clientX
-    const mouseY = e.clientY
+const handleMouseMove = (e: MouseEvent) => {
+  const mouseX = e.clientX
+  const mouseY = e.clientY
 
-    if (backlight.value) {
-      gsap.to(backlight.value, {
-        x: mouseX - backlight.value.offsetWidth / 2,
-        y: mouseY - backlight.value.offsetHeight / 2,
-        duration: 0.1,
-        ease: 'power1.out',
-      })
-    }
+  if (backlight.value) {
+    gsap.to(backlight.value, {
+      x: mouseX - backlight.value.offsetWidth / 2,
+      y: mouseY - backlight.value.offsetHeight / 2,
+      duration: 0.1,
+      ease: 'power1.out',
+    })
   }
-
-  document.addEventListener('mousemove', handleMouseMove)
-
-  const handleMouseLeave = () => {
-    if (backlight.value) {
-      gsap.to(backlight.value, {
-        width: 500,
-        height: 500,
-        opacity: 0.2,
-        duration: 0.2,
-        ease: 'power2.out',
-      })
-    }
-  }
-
-  document.addEventListener('mouseleave', handleMouseLeave)
-
-  onBeforeUnmount(() => {
-    document.removeEventListener('mousemove', handleMouseMove)
-    document.removeEventListener('mouseleave', handleMouseLeave)
-  })
 }
+
+const handleMouseLeave = () => {
+  if (backlight.value) {
+    gsap.to(backlight.value, {
+      width: 500,
+      height: 500,
+      opacity: 0.2,
+      duration: 0.2,
+      ease: 'power2.out',
+    })
+  }
+}
+
+const initMouseEffect = () => {
+  document.addEventListener('mousemove', handleMouseMove)
+  document.addEventListener('mouseleave', handleMouseLeave)
+}
+
+onBeforeUnmount(() => {
+  document.removeEventListener('mousemove', handleMouseMove)
+  document.removeEventListener('mouseleave', handleMouseLeave)
+})
 
 onMounted(() => {
   setTimeout(() => {

@@ -11,8 +11,6 @@ const getRandomSign = (): number => {
 }
 
 const bounceEffect = throttle(() => {
-  if (!photo.value) return
-
   const randomX = getRandomSign()
   const randomY = getRandomSign()
 
