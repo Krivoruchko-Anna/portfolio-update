@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-// import { useRouter } from "vue-router";
 
 import AppHeader from '@/components/header/AppHeader.vue'
 import AppMain from '@/components/AppMain.vue'
@@ -8,8 +7,6 @@ import LavaLamp from '@/components/LavaLamp.vue'
 import IconUp from '@/components/icons/IconUp.vue'
 import Backlight from '@/components/Backlight.vue'
 import Copyright from '@/components/Copyright.vue'
-
-// const router = useRouter()
 
 const showArrow = ref(false)
 
@@ -23,10 +20,6 @@ const scrollToTop = () => {
     behavior: 'smooth',
   })
 }
-
-// onBeforeMount(() => {
-//   router.push('')
-// })
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
