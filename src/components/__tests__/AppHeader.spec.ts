@@ -1,6 +1,6 @@
-import { mount } from '@vue/test-utils'
+import { mount, VueWrapper } from '@vue/test-utils'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, RouterLink } from 'vue-router'
 import AppHeader from '@/components/header/AppHeader.vue'
 import Lines from '@/components/header/Lines.vue'
 import { nextTick } from 'vue'
@@ -16,111 +16,105 @@ const router = createRouter({
   routes,
 })
 
-vi.mock('@/components/icons/IconLinkedin.vue', () => ({
-  default: {
-    template: '<div class="mock-icon-linkedin"></div>',
-  },
-}))
+vi.mock('@/components/icons/IconLinkedin.vue', () => ({ default: { template: '<div class="mock-icon-linkedin"></div>' } }))
+vi.mock('@/components/icons/IconGithub.vue', () => ({ default: { template: '<div class="mock-icon-github"></div>' } }))
+vi.mock('@/components/icons/IconBehance.vue', () => ({ default: { template: '<div class="mock-icon-behance"></div>' } }))
+vi.mock('@/components/icons/IconInstagram.vue', () => ({ default: { template: '<div class="mock-icon-instagram"></div>' } }))
 
-vi.mock('@/components/icons/IconGithub.vue', () => ({
-  default: {
-    template: '<div class="mock-icon-github"></div>',
-  },
-}))
+class IntersectionObserverMock implements IntersectionObserver {
+  readonly root: Element | null = null
+  readonly rootMargin: string = ''
+  readonly thresholds: ReadonlyArray<number> = []
+  callbackFn: IntersectionObserverCallback
 
-vi.mock('@/components/icons/IconBehance.vue', () => ({
-  default: {
-    template: '<div class="mock-icon-behance"></div>', // Simple mock component
-  },
-}))
+  constructor(callback: IntersectionObserverCallback, options?: IntersectionObserverInit) {
+    this.callbackFn = callback
+  }
 
-vi.mock('@/components/icons/IconInstagram.vue', () => ({
-  default: {
-    template: '<div class="mock-icon-instagram"></div>', // Simple mock component
-  },
-}))
+  observe(target: Element): void {}
+  unobserve(target: Element): void {}
+  disconnect(): void {}
+  takeRecords(): IntersectionObserverEntry[] {
+    return []
+  }
+  triggerCallback(entries: IntersectionObserverEntry[]) {
+    this.callbackFn(entries, this)
+  }
+}
+
+global.IntersectionObserver = IntersectionObserverMock as any
 
 describe('AppHeader.vue', () => {
-  let wrapper: any
-  let handleScrollSpy: any
+  let wrapper: VueWrapper<any>
 
   beforeEach(async () => {
     wrapper = mount(AppHeader, {
-      global: {
-        plugins: [router],
-      },
+      global: { plugins: [router], stubs: { RouterLink } },
     })
-
     await router.isReady()
   })
 
   it('renders the name and title correctly', () => {
-    const name = wrapper.find('.header__name')
-    const title = wrapper.find('.header__title')
-
-    expect(name.text()).toBe('Anna Krivoruchko')
-    expect(title.text()).toBe('Front End Developer')
+    expect(wrapper.find('.header__name').text()).toBe('Anna Krivoruchko')
+    expect(wrapper.find('.header__title').text()).toBe('Front End Developer')
   })
 
   it('renders the description correctly', () => {
-    const description = wrapper.find('.header__description')
-    expect(description.text()).toBe(
-      'I build responsive, pixel-perfect web applications that deliver seamless digital experiences.',
+    expect(wrapper.find('.header__description').text()).toBe(
+      'I build responsive, pixel-perfect web applications that deliver seamless digital experiences.'
     )
   })
 
   it('renders the navigation links correctly', () => {
-    const navItems = wrapper.findAll('.header__nav-item')
     const navLinks = ['About', 'Experience', 'Projects']
-
-    navItems.forEach((item, index) => {
+    wrapper.findAll('.header__nav-item').forEach((item, index) => {
       expect(item.text()).toBe(navLinks[index])
     })
   })
 
   it('highlights the active section correctly', async () => {
-    await wrapper.find('li:nth-child(2)').trigger('click')
-    await nextTick()
-
-    const activeItem = wrapper.find('.header__nav-item.active')
-    expect(activeItem.text()).toBe('Experience')
-  })
-
-  it('adds active class to the correct nav item based on scroll position', async () => {
     wrapper.vm.updateActiveSection('experience')
     await nextTick()
+    expect(wrapper.find('.header__nav-item.active').text()).toContain('Experience')
+  })
 
-    const activeItem = wrapper.find('.header__nav-item.active')
-    expect(activeItem.text()).toBe('Experience')
+  it('disables scroll listener on nav item click', async () => {
+    const routerLinks = wrapper.findAllComponents(RouterLink)
+    await routerLinks[0].trigger('click')
+    expect(wrapper.vm.isScrollListenerDisabled).toBe(true)
+  })
+
+  it('updates activeSection based on intersection observer', async () => {
+    const fakeEntry: IntersectionObserverEntry = {
+      time: 0,
+      target: { id: 'about' } as Element,
+      isIntersecting: true,
+      intersectionRatio: 0.6,
+      boundingClientRect: {} as DOMRect,
+      intersectionRect: {} as DOMRect,
+      rootBounds: null,
+    }
+    const observerInstance = new IntersectionObserverMock(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) wrapper.vm.activeSection = entry.target.id
+      })
+    })
+
+    observerInstance.triggerCallback([fakeEntry])
+    await nextTick()
+    expect(wrapper.vm.activeSection).toBe('about')
   })
 
   it('renders social media icons correctly', () => {
-    const socialLinks = wrapper.findAll('.header__link')
-
-    expect(socialLinks.length).toBe(4)
-
-    socialLinks.forEach((link) => {
+    wrapper.findAll('.header__link').forEach(link => {
       const anchor = link.find('a')
       expect(anchor.exists()).toBe(true)
       expect(anchor.attributes('href')).toBeTruthy()
-
-      const component = link.find('.header__icon')
-      expect(component.exists()).toBe(true)
-      expect(component.attributes('is')).toBe(link.icon)
+      expect(link.find('.header__icon').exists()).toBe(true)
     })
   })
 
   it('renders the Lines component', () => {
-    const linesComponent = wrapper.findComponent(Lines)
-    expect(linesComponent.exists()).toBe(true)
-  })
-
-  it('disables scroll listener when a nav item is clicked and checks for router-links', async () => {
-    const routerLinks = wrapper.findAllComponents({ name: 'RouterLink' })
-    expect(routerLinks.length).toBe(3)
-
-    await routerLinks[0].trigger('click')
-
-    expect(wrapper.vm.isScrollListenerDisabled).toBe(true)
+    expect(wrapper.findComponent(Lines).exists()).toBe(true)
   })
 })

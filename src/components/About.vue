@@ -4,46 +4,22 @@ import { gsap } from 'gsap'
 import { throttle } from 'lodash'
 
 const photo = ref<HTMLImageElement | null>(null)
-const circle = ref<HTMLImageElement | null>(null)
+const circle = ref<HTMLDivElement | null>(null)
 
-const getRandomSign = (): number => {
-  return Math.random() < 0.5 ? -100 : 100
-}
+const getRandomSign = (): number => Math.random() < 0.5 ? -100 : 100
 
 const bounceEffect = throttle(() => {
   const randomX = getRandomSign()
   const randomY = getRandomSign()
 
-  gsap.fromTo(
-    photo.value,
+  gsap.fromTo(photo.value,
     { y: 0, x: 0 },
-    {
-      scale: 0.85,
-      y: randomY,
-      x: randomX,
-      skewX: 25,
-      skewY: 25,
-      duration: 0.1,
-      ease: 'elastic.out',
-      yoyo: true,
-      repeat: 1,
-    },
+    { scale: 0.85, y: randomY, x: randomX, skewX: 25, skewY: 25, duration: 0.1, ease: 'elastic.out', yoyo: true, repeat: 1 }
   )
 
-  gsap.fromTo(
-    circle.value,
+  gsap.fromTo(circle.value,
     { y: 0, x: 0 },
-    {
-      scale: 0.9,
-      y: 0,
-      x: 0,
-      skewX: 0,
-      skewY: 0,
-      duration: 0.1,
-      ease: 'elastic.out',
-      yoyo: true,
-      repeat: 1,
-    },
+    { scale: 0.9, y: 0, x: 0, skewX: 0, skewY: 0, duration: 0.1, ease: 'elastic.out', yoyo: true, repeat: 1 }
   )
 }, 900)
 </script>

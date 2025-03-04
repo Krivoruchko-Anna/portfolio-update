@@ -1,16 +1,70 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const circles = [
+  {
+    id: 1,
+    left: '14%',
+    size: 100,
+    delay: '9s',
+    gradient: 'var(--lava-orange), var(--lava-orange-1)',
+  },
+  {
+    id: 2,
+    left: '32%',
+    size: 120,
+    delay: '5s',
+    gradient: 'var(--lava-orange-1), var(--yellow-lava)',
+  },
+  { id: 3, left: '60%', size: 80, delay: '0s', gradient: 'var(--biege), var(--light-brown)' },
+  { id: 4, left: '85%', size: 90, delay: '11s', gradient: 'var(--lava-orange), var(--red)' },
+  {
+    id: 5,
+    left: '9px',
+    size: 94,
+    delay: '10s',
+    gradient: 'var(--lava-orange-2), var(--yellow-lava)',
+  },
+  {
+    id: 6,
+    left: '92%',
+    size: 60,
+    delay: '2s',
+    gradient: 'var(--lava-orange), var(--lava-orange-1)',
+  },
+]
+
+const middleCircles = [
+  { id: 7, left: '49%', size: 90, delay: '3s', gradient: 'var(--lava-orange), var(--red)' },
+  { id: 8, left: '25%', size: 94, delay: '1s', gradient: 'var(--light-brown), var(--biege)' },
+]
+</script>
 
 <template>
   <div class="lava-lamp">
-    <div class="circle circle1"></div>
-    <div class="circle circle2"></div>
-    <div class="circle circle3"></div>
-    <div class="circle circle4"></div>
-    <div class="circle circle5"></div>
-    <div class="circle circle6"></div>
+    <div
+      v-for="circle in circles"
+      :key="circle.id"
+      class="circle"
+      :style="{
+        left: circle.left,
+        width: `${circle.size}px`,
+        height: `${circle.size}px`,
+        animationDelay: circle.delay,
+        background: `radial-gradient(circle at top left, ${circle.gradient})`,
+      }"
+    ></div>
 
-    <div class="circle-m circle7"></div>
-    <div class="circle-m circle8"></div>
+    <div
+      v-for="circle in middleCircles"
+      :key="circle.id"
+      class="circle-m"
+      :style="{
+        left: circle.left,
+        width: `${circle.size}px`,
+        height: `${circle.size}px`,
+        animationDelay: circle.delay,
+        background: `radial-gradient(circle at top right, ${circle.gradient})`,
+      }"
+    ></div>
   </div>
 </template>
 
@@ -30,14 +84,12 @@
   }
 }
 
-.circle {
+.circle,
+.circle-m {
   position: absolute;
   bottom: 0;
-  width: 100px;
-  height: 100px;
   border-radius: 50%;
   border: 2px solid var(--dark-brown);
-  background: radial-gradient(circle at top left, var(--lava-orange), var(--lava-orange-1));
   opacity: 0;
   animation:
     floatUp 40s linear infinite,
@@ -45,78 +97,10 @@
 }
 
 .circle-m {
-  position: absolute;
   bottom: 65%;
-  width: 94px;
-  height: 94px;
-  border-radius: 50%;
-  border: 1px solid var(--dark-brown);
-  background: radial-gradient(circle at top left, var(--lava-orange), var(--lava-orange-1));
-  opacity: 0;
   animation:
     floatUp-m 18s linear infinite,
     deform 8s infinite ease-in-out;
-}
-
-.circle1 {
-  left: 14%;
-  animation-delay: 9s;
-}
-
-.circle2 {
-  left: 32%;
-  animation-delay: 5s;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle at bottom right, var(--lava-orange-1), var(--yellow-lava));
-}
-
-.circle3 {
-  left: 60%;
-  animation-delay: 0s;
-  width: 80px;
-  height: 80px;
-  background: radial-gradient(circle at bottom right, var(--biege), var(--light-brown));
-}
-
-.circle4 {
-  left: 85%;
-  animation-delay: 11s;
-  width: 90px;
-  height: 90px;
-  background: radial-gradient(circle at center, var(--lava-orange), var(--red));
-}
-
-.circle5 {
-  left: 9px;
-  animation-delay: 10s;
-  width: 94px;
-  height: 94px;
-  background: radial-gradient(circle at bottom right, var(--lava-orange-2), var(--yellow-lava));
-}
-
-.circle6 {
-  left: 92%;
-  animation-delay: 2s;
-  width: 60px;
-  height: 60px;
-  background: radial-gradient(circle at top left, var(--lava-orange), var(--lava-orange-1));
-}
-
-.circle7 {
-  left: 49%;
-  animation-delay: 3s;
-  width: 90px;
-  height: 90px;
-  background: radial-gradient(circle at top right, var(--lava-orange), var(--red));
-}
-
-.circle8 {
-  left: 25%;
-  animation-delay: 1s;
-  width: 94px;
-  height: 94px;
-  background: radial-gradient(circle at bottom right, var(--light-brown), var(--biege));
 }
 
 @keyframes floatUp {
@@ -148,7 +132,8 @@
 }
 
 @keyframes deform {
-  0% {
+  0%,
+  100% {
     transform: scale(1);
     border-radius: 50%;
   }
@@ -163,10 +148,6 @@
   75% {
     transform: scale(1.1);
     border-radius: 50% 50% 40% 60%;
-  }
-  100% {
-    transform: scale(1);
-    border-radius: 50%;
   }
 }
 </style>

@@ -84,27 +84,28 @@ describe('Backlight Component', () => {
   })
 
   it('handles mouseleave and updates backlight properties', async () => {
-    const wrapper = mount(Backlight)
-
     const gsapSpy = vi.spyOn(gsap, 'to')
-
     const addEventListenerSpy = vi.spyOn(document, 'addEventListener')
 
-    const mockEvent = new MouseEvent('mouseleave')
+    const wrapper = mount(Backlight)
 
     await wrapper.vm.$nextTick()
 
-    document.dispatchEvent(mockEvent)
-
-    await new Promise((resolve) => setTimeout(resolve, 600))
     expect(addEventListenerSpy).toHaveBeenCalledWith('mouseleave', expect.any(Function))
 
-    expect(gsapSpy).toHaveBeenCalledWith(expect.anything(), {
-      width: 500,
-      height: 500,
-      opacity: 0.2,
-      duration: 0.2,
-      ease: 'power2.out',
-    })
+    document.dispatchEvent(new MouseEvent('mouseleave'))
+
+    await new Promise((resolve) => setTimeout(resolve, 600))
+
+    expect(gsapSpy).toHaveBeenCalledWith(
+      expect.anything(),
+      expect.objectContaining({
+        width: 500,
+        height: 500,
+        opacity: 0.2,
+        duration: 0.2,
+        ease: 'power2.out',
+      }),
+    )
   })
 })

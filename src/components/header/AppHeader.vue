@@ -13,8 +13,6 @@ const IconInstagramRaw = markRaw(IconInstagram)
 
 const activeSection = ref('about')
 
-const isScrollListenerDisabled = ref(false)
-
 const navLinks = ref([
   { title: 'About', to: '#about', id: 'about' },
   { title: 'Experience', to: '#experience', id: 'experience' },
@@ -33,41 +31,44 @@ const socials = ref([
 
 const sections = ['about', 'experience', 'projects']
 
+const observer = new IntersectionObserver(
+  (entries) => {
+    const visibleSection = entries.find((entry) => entry.isIntersecting)
+    if (visibleSection && !isScrollListenerDisabled.value) {
+      activeSection.value = visibleSection.target.id
+    }
+  },
+  {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50% 0px',
+  },
+)
+
 const updateActiveSection = (link: string) => {
   activeSection.value = link
 }
+
+const isScrollListenerDisabled = ref(false)
+
 const disableListener = () => {
   isScrollListenerDisabled.value = true
-
   setTimeout(() => {
     isScrollListenerDisabled.value = false
   }, 500)
 }
 
-const handleScroll = () => {
-  if (isScrollListenerDisabled.value) return
-
-  const offsets = sections.map((id) => {
-    const element = document.getElementById(id)
-    if (!element) return { id, offset: Infinity }
-    return { id, offset: element.getBoundingClientRect().top }
-  })
-
-  const closestSection = offsets.reduce((prev, curr) =>
-    Math.abs(curr.offset) < Math.abs(prev.offset) ? curr : prev,
-  )
-
-  if (closestSection.id !== activeSection.value) {
-    updateActiveSection(closestSection.id)
-  }
-}
-
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
+  sections.forEach((section) => {
+    const element = document.getElementById(section)
+    if (element) observer.observe(element)
+  })
 })
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
+  sections.forEach((section) => {
+    const element = document.getElementById(section)
+    if (element) observer.unobserve(element)
+  })
 })
 </script>
 
