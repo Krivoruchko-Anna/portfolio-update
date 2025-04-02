@@ -40,7 +40,7 @@ const bounceEffect = throttle(() => {
 
       <div class="about__info">
         <p>
-          I am a Frontend Developer with over three years of commercial experience, specializing in
+          I am a Frontend Developer with over four years of commercial experience, specializing in
           creating dynamic and user-friendly web applications using modern technologies like Vue.js,
           TypeScript, and Lit. Throughout my career, I have worked on diverse projects ranging from
           international trading platforms and online education tools to charity initiatives and
