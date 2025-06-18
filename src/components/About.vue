@@ -125,7 +125,6 @@ const bounceEffect = throttle(() => {
 
 @media (max-width: 1024px) {
   .about {
-    margin-top: 30px;
     padding: 60px 20px 0 20px;
 
     &__container {
@@ -144,6 +143,12 @@ const bounceEffect = throttle(() => {
     &__circle {
       display: none;
     }
+  }
+}
+
+@media (max-width: 460px) {
+  .about {
+    padding: 20px 6px;
   }
 }
 

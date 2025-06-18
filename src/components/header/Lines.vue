@@ -133,7 +133,7 @@ const onLeave = (lineIndex: number) => {
       height: 232px;
 
       @media (max-width: 378px) {
-        height: 302px;
+        height: 264px;
       }
     }
 
@@ -163,6 +163,12 @@ const onLeave = (lineIndex: number) => {
     .mobile-lines {
       display: flex;
     }
+  }
+}
+
+@media (max-width: 460px) {
+  .lines {
+    left: 0;
   }
 }
 </style>

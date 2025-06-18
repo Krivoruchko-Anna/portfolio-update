@@ -56,6 +56,12 @@ export const Projects: ProjectItemType[] = [
 
 export const PetProjects: ProjectItemType[] = [
   {
+    title: 'Watts App',
+    description: 'Chat with Alan Watts',
+    image: 'watts-app',
+    link: 'https://watts-app.3dw.by/',
+  },
+  {
     title: 'Sweet Inner Radiance',
     description: 'Jewelry store',
     image: 'sweet-inner-radiance',

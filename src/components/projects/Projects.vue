@@ -36,28 +36,35 @@ import { Projects, PetProjects } from '@/components/projects/projects.ts'
 
   &__title {
     display: none;
-    padding-left: 20px;
   }
 
   .show {
     margin-bottom: 30px;
-    padding-left: 20px;
     display: block;
   }
-}
 
-@media (max-width: 1024px) {
-  .projects {
+  @media (max-width: 1480px) {
+    &__container {
+      gap: 14px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 20px;
     margin-top: 80px;
 
     &__container {
       margin-top: 20px;
-      gap: 10px;
+      gap: 4px;
     }
 
     &__title {
       display: block;
     }
+  }
+
+  @media (max-width: 860px) {
+    margin-top: 40px;
   }
 }
 
@@ -78,9 +85,28 @@ import { Projects, PetProjects } from '@/components/projects/projects.ts'
     gap: 20px;
 
     .project-item {
-      padding: 20px;
+      padding: 8px 20px;
       width: 100%;
     }
+  }
+
+  @media (max-width: 1024px) {
+    .projects {
+      &__container {
+        margin-top: 20px;
+        gap: 4px;
+      }
+    }
+
+    .project-item {
+      padding: 6px 0;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .projects {
+    padding: 12px 6px;
   }
 }
 </style>

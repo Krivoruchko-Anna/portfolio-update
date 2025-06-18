@@ -70,6 +70,7 @@ defineProps<{
   @media (max-width: 1024px) {
     flex-direction: column;
     gap: 10px;
+    padding: 14px 0;
 
     &__description {
       margin-top: 10px;

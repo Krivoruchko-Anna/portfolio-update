@@ -38,7 +38,7 @@ defineProps<{
 
 @media (max-width: 1024px) {
   .project-item {
-    padding: 12px;
+    padding: 6px 0;
 
     &:hover {
       background-color: transparent;
@@ -47,6 +47,16 @@ defineProps<{
 
     &__image {
       width: 100px;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .project-item {
+    gap: 10px;
+
+    &__description {
+      font-size: 14px;
     }
   }
 }

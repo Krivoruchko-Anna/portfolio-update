@@ -19,7 +19,6 @@ import { Experience } from '@/components/experience/experience.ts'
 
   &__title {
     display: none;
-    padding-left: 20px;
   }
 
   &__container {
@@ -31,6 +30,7 @@ import { Experience } from '@/components/experience/experience.ts'
 
 @media (max-width: 1024px) {
   .experience {
+    padding: 20px;
     margin-top: 80px;
 
     &__title {
@@ -41,6 +41,18 @@ import { Experience } from '@/components/experience/experience.ts'
       margin-top: 10px;
       gap: 10px;
     }
+  }
+}
+
+@media (max-width: 860px) {
+  .experience {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 460px) {
+  .experience {
+    padding: 12px 6px;
   }
 }
 </style>
