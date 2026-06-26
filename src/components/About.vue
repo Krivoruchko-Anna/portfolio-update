@@ -46,7 +46,7 @@ const bounceEffect = throttle(() => {
           Over the years, I've worked on projects in different industries, including trading, education, charity, and monitoring systems. I enjoy creating fast, user-friendly interfaces and writing clean, maintainable code.
         </p>
         <p>
-          I like collaborating with teammates, sharing ideas, and continuously learning new things. When I'm not coding, you'll probably find me making silver jewelry, traveling, or enjoying music and a good book.
+          I like collaborating with teammates, sharing ideas, and continuously learning new things. Outside of work, I enjoy playing the synthesizer, going for long walks, listening to music, and reading.
         </p>
       </div>
     </div>
