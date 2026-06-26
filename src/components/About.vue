@@ -40,7 +40,10 @@ const bounceEffect = throttle(() => {
 
       <div class="about__info">
         <p>
-          I'm a Frontend Developer with 5+ years of experience building web applications with Vue.js, TypeScript, and Lit. Over the years, I've worked on projects in different industries, including trading, education, charity, and monitoring systems. I enjoy creating fast, user-friendly interfaces and writing clean, maintainable code.
+          I'm a Frontend Developer with 5+ years of experience building modern web applications using Vue.js, TypeScript, and modern frontend tooling.
+        </p>
+        <p>
+          Over the years, I've worked on projects in different industries, including trading, education, charity, and monitoring systems. I enjoy creating fast, user-friendly interfaces and writing clean, maintainable code.
         </p>
         <p>
           I like collaborating with teammates, sharing ideas, and continuously learning new things. When I'm not coding, you'll probably find me making silver jewelry, traveling, or enjoying music and a good book.
