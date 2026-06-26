@@ -8,10 +8,25 @@ export type ExperienceItemType = {
 
 export const Experience: ExperienceItemType[] = [
   {
+    date: 'Aug 2025 - May 2026',
+    title: 'Athena AI',
+    description:
+      'Built and improved frontend features for an AI-powered platform that automates everyday workflows. Developed responsive interfaces with Vue.js and contributed to related web projects.',
+    stack: ['Vue.js 3', 'TS', 'Nuxt', 'Pinia', 'Axios', 'Pug', 'Vuetify', 'Tailwind', 'i18n'],
+    link: 'https://athenachat.ai/',
+  },
+  {
+    date: 'Jan 2025 - June 2025',
+    title: 'Freelance',
+    description:
+      'Developed an educational website with learning resources for teachers of young English learners.',
+    stack: ['Vue.js 3', 'TS', 'Pinia', 'Axios'],
+  },
+  {
     date: 'Sep 2023 - Nov 2024',
     title: 'Frontend Developer (Vue.js) at Centiment',
     description:
-      'My primary responsibility was rewriting the existing monolithic application into a modern architecture using Vue.js 3 with a separate frontend. I developed new components and pages aligned with the updated design, ensuring a seamless user experience. Additionally, I participated in design discussions, collaborated with team members to refine the UI, conducted code reviews to maintain high-quality standards, and supported the migration to a scalable and efficient platform architecture.',
+      'Helped migrate a monolithic application to a modern Vue 3 architecture with a separate frontend. Built new pages and reusable components, collaborated on UI improvements, and supported code quality through reviews.',
     stack: ['Vue.js 2', 'Vue.js 3', 'TS', 'Storybook', 'UnoCss', 'Pinia', 'Axios'],
     link: 'https://www.centiment.co/',
   },
@@ -19,7 +34,7 @@ export const Experience: ExperienceItemType[] = [
     date: 'Jan 2022 - Jul 2023',
     title: 'Frontend Developer (Vue.js) at Godel Technologies',
     description:
-      'I worked on a web application for monitoring communication data, consolidating sources like phone calls, emails, and WhatsApp into a unified platform. My role included creating web components with LitElement, developing features with Vue.js 3, writing tests, documenting technical details, performing code reviews, and participating in Agile ceremonies and planning meetings.',
+      'Developed a communication monitoring platform that unified data from calls, emails, and WhatsApp. Built features with Vue.js and Lit, wrote tests, documented solutions, and contributed to code reviews and Agile planning.',
     stack: [
       'Vue.js 3',
       'TS',
@@ -30,6 +45,7 @@ export const Experience: ExperienceItemType[] = [
       'Jest',
       'Pinia',
       'Axios',
+      'i18n'
     ],
     link: 'https://www.godeltech.com/',
   },
@@ -37,21 +53,21 @@ export const Experience: ExperienceItemType[] = [
     date: 'Jun 2021 - Dec 2021',
     title: 'Frontend Developer (Vue.js) at Brymonsoft',
     description:
-      'I worked on two startup projects: a platform for online music classes and a web constructor for fast website creation. My responsibilities included developing and upgrading features and widgets with Vue.js 2 and 3, troubleshooting and maintaining the code, optimizing user experience, creating technical documentation, performing code reviews, and contributing to project planning and estimation.',
-    stack: ['Vue.js 2', 'Vue.js 3', 'HTML', 'JS', 'SCSS', 'Axios', 'Vuex', 'Vue Router', 'Docker'],
+      'Worked on an online music learning platform and a website builder. Developed new features and widgets, improved existing functionality, and contributed to planning, documentation, and code reviews.',
+    stack: ['Vue.js 2', 'Vue.js 3', 'HTML', 'JS', 'SCSS', 'Axios', 'Vuex', 'Vue Router', 'Docker', 'i18n'],
     link: 'https://brymonsoft.com/',
   },
   {
     date: 'Mar 2021 - June 2021',
     title: 'Frontend Developer (Vue.js) at Antalogic',
     description:
-      'I worked on two projects: an international platform for trading commercial vehicles and a charity platform designed to motivate people to support one another. My role included developing features and components using Vue.js 2 and 3, refactoring code for quality, optimizing user experience, researching best practices and estimation and planning for efficient development.',
-    stack: ['Vue.js 2', 'Vue.js 3', 'Axios', 'Nuxt', 'SCSS', 'Bootstrap', 'Vuex'],
+      'Worked on an international commercial vehicle marketplace and a charity platform. Developed new features, improved code quality, and helped enhance the overall user experience.',
+    stack: ['Vue.js 2', 'Vue.js 3', 'Axios', 'Nuxt', 'SCSS', 'Bootstrap', 'Vuex', 'i18n'],
   },
   {
     date: 'Jun 2020 - Mar 2021',
     title: 'Frontend Developer (Freelance)',
-    description: 'Working on several websites and landing pages, some web design works.',
+    description: 'Built websites and landing pages for clients, with occasional UI and web design work.',
     stack: ['JS', 'HTML', 'CSS', 'JQuery', 'AJAX'],
   },
 ]

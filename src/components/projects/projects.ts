@@ -7,6 +7,20 @@ export type ProjectItemType = {
 
 export const Projects: ProjectItemType[] = [
   {
+    title: 'Athena AI',
+    description:
+      'An AI-powered platform that helps automate repetitive workflows and improve productivity through intelligent assistants and business automation tools.',
+    image: 'athena',
+    link: 'https://www.centiment.co/',
+  },
+  {
+    title: 'Centiment',
+    description:
+      'A web platform offering a comprehensive market research solution, featuring survey tools, access to a global audience panel, and expert research services.',
+    image: 'centiment',
+    link: 'https://www.centiment.co/',
+  },
+  {
     title: 'Musio',
     description:
       'A platform designed for musicians and their students to facilitate online music lessons, connecting people from around the globe.',
@@ -18,12 +32,6 @@ export const Projects: ProjectItemType[] = [
     description: 'Landing page for Kids Smart Club.',
     image: 'be-clever',
     link: 'https://beclever.by/',
-  },
-  {
-    title: 'La Salute',
-    description: 'A website for a European cuisine restaurant.',
-    image: 'la-salute',
-    link: 'http://la-salute.3dw.by/',
   },
   {
     title: 'Truckoo',
@@ -39,18 +47,17 @@ export const Projects: ProjectItemType[] = [
     link: 'https://impactfactors.net/',
   },
   {
+    title: 'La Salute',
+    description: 'A website for a European cuisine restaurant.',
+    image: 'la-salute',
+    link: 'http://la-salute.3dw.by/',
+  },
+  {
     title: 'VoxSmart',
     description:
       'A web application that consolidates communication data from various sources into a single platform for monitoring employees handling sensitive information.',
     image: 'voxsmart',
     link: 'https://www.voxsmart.com/',
-  },
-  {
-    title: 'Centiment',
-    description:
-      'A web platform offering a comprehensive market research solution, featuring survey tools, access to a global audience panel, and expert research services.',
-    image: 'centiment',
-    link: 'https://www.centiment.co/',
   },
 ]
 

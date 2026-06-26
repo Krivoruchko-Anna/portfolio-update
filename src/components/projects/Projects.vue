@@ -12,7 +12,7 @@ import { Projects, PetProjects } from '@/components/projects/projects.ts'
   </div>
 
   <div class="projects pet-projects">
-    <h2 class="projects__title show">Just for fun</h2>
+    <h2 class="projects__title">Just for fun</h2>
     <div class="projects__container">
       <ProjectItem
         v-for="project in PetProjects"
@@ -35,12 +35,8 @@ import { Projects, PetProjects } from '@/components/projects/projects.ts'
   }
 
   &__title {
-    display: none;
-  }
-
-  .show {
+    margin-left: 20px;
     margin-bottom: 30px;
-    display: block;
   }
 
   @media (max-width: 1480px) {
@@ -59,7 +55,7 @@ import { Projects, PetProjects } from '@/components/projects/projects.ts'
     }
 
     &__title {
-      display: block;
+      margin-left: 0;
     }
   }
 
